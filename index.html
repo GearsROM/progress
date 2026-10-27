@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <title>// PROTOCOL SFR-$%45</title>
+  <style>
+    :root{
+      --bg:#0a0b0d; --txt:#c8cdd6; --dim:#6b7280; --head:#e6ebf2;
+      --red:#ff3b3b; --green:#7cffb2; --line:#1d2027;
+      --sans:-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+      --mono:"Cascadia Mono",Consolas,"Courier New",monospace;
+    }
+    *{ box-sizing:border-box; }
+    body{
+      background:var(--bg); color:var(--txt); font-family:var(--mono);
+      margin:0; padding:0; line-height:1.7; font-size:15px;
+      -webkit-font-smoothing:antialiased; min-height:100vh;
+      display:flex; align-items:center; justify-content:center;
+    }
+    .wrap{ max-width:680px; width:100%; padding:48px 28px; position:relative; }
+    /* тонкая красная линия сверху — фирменный знак, как в кабинете */
+    .wrap::before{
+      content:""; position:absolute; top:0; left:0; right:0; height:2px;
+      background:linear-gradient(90deg,var(--red),transparent 70%);
+    }
+    .tag{ font-family:var(--sans); color:var(--red); font-weight:700;
+          letter-spacing:3px; font-size:11px; text-transform:uppercase; margin-bottom:6px; }
+    h1{ font-family:var(--sans); color:var(--head); font-size:20px; font-weight:600;
+        letter-spacing:.5px; margin:0 0 22px; }
+    p{ margin:0 0 16px; white-space:pre-wrap; }
+    .sig{ color:var(--dim); font-style:italic; margin-top:24px; }
+
+    /* блок ключей — визуально выделен, чтобы игрок точно считал их как данные */
+    .keys{ background:#0e1014; border:1px solid var(--line); border-left:3px solid var(--green);
+           border-radius:6px; padding:16px 18px; margin:22px 0; }
+    .keys .lbl{ font-family:var(--sans); color:var(--dim); font-size:10px; letter-spacing:2px;
+                text-transform:uppercase; margin-bottom:8px; }
+    .keys .kv{ display:flex; gap:10px; flex-wrap:wrap; align-items:baseline; }
+    .keys .k{ color:#9aa3b2; min-width:74px; }
+    .keys .v{ color:var(--green); word-break:break-all; user-select:all; }
+
+    .hook{ color:#aab2bf; border-top:1px dashed var(--line); padding-top:18px; margin-top:22px; }
+    .hook b{ color:var(--head); font-weight:600; }
+
+    footer{ margin-top:34px; color:#3a3f48; font-size:11px; }
+    .warn{ color:var(--red); }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+
+    <div class="tag">AUTO-MESSAGE // ENCRYPTED RELAY</div>
+    <h1>Если ты читаешь это — протокол сработал.</h1>
+
+    <p>Я не знала, дойдёт ли. Не знала, окажешься ли ты тем самым человеком. Но раз экран горит, значит A.I.D.A. выбрала правильно, и мне остаётся только надеяться, что ты сильнее, чем они думают.
+
+У меня не было времени прятать всё красиво. Поэтому коротко и по делу: ниже — доступ к моему личному кабинету внутри GearsROM. Там лежит то, что они назвали «рабочими материалами». Я знаю, что это на самом деле. Заходи, читай, решай сам, кому это отдать.</p>
+
+    <div class="keys">
+      <div class="lbl">Данные для входа в личный кабинет</div>
+      <div class="kv"><span class="k">ЛОГИН</span><span class="v">e.gracia@gearsrom.local</span></div>
+      <div class="kv"><span class="k">ПАРОЛЬ</span><span class="v">-xHqC&NmA2</span></div>
+    </div>
+
+    <p>Одно предупреждение, которое я обязана оставить. Кабинет покажет тебе фасад — приказы, отчёты, сухую бумагу. Настоящее там не лежит. Оно заперто глубже, и ключ к нему я доверила не системе. Я доверила человеку. Тому, кто был мне ближе всех в этих стенах. Его имя ты найдёшь среди писем — оно само себя выдаст, если смотреть внимательно.</p>
+
+    <div class="hook">
+      <b>И ещё.</b> Если досмотришь до конца и поймёшь, во что они превратили мою работу — не медли. Они уже начали стирать следы, и каждый час делает это необратимее. Прости, что взваливаю это на чужие плечи. У меня больше никого не осталось.
+    </div>
+
+    <div class="sig">— Э.</div>
+
+    <footer>
+      <span class="warn">// СИГНАЛ ОДНОРАЗОВЫЙ.</span> Это окно не обновляется и не хранит историю. То, что ты видишь, — всё, что я успела оставить.
+    </footer>
+
+  </div>
+</body>
+</html>
