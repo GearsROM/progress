@@ -11,26 +11,19 @@
       --mono:"Cascadia Mono",Consolas,"Courier New",monospace;
     }
     *{ box-sizing:border-box; }
-    body{
-      background:var(--bg); color:var(--txt); font-family:var(--mono);
-      margin:0; padding:0; line-height:1.7; font-size:15px;
-      -webkit-font-smoothing:antialiased; min-height:100vh;
-      display:flex; align-items:center; justify-content:center;
-    }
+    body{ background:var(--bg); color:var(--txt); font-family:var(--mono);
+          margin:0; padding:0; line-height:1.7; font-size:15px;
+          -webkit-font-smoothing:antialiased; min-height:100vh;
+          display:flex; align-items:center; justify-content:center; }
     .wrap{ max-width:680px; width:100%; padding:48px 28px; position:relative; }
-    /* тонкая красная линия сверху — фирменный знак, как в кабинете */
-    .wrap::before{
-      content:""; position:absolute; top:0; left:0; right:0; height:2px;
-      background:linear-gradient(90deg,var(--red),transparent 70%);
-    }
+    .wrap::before{ content:""; position:absolute; top:0; left:0; right:0; height:2px;
+          background:linear-gradient(90deg,var(--red),transparent 70%); }
     .tag{ font-family:var(--sans); color:var(--red); font-weight:700;
           letter-spacing:3px; font-size:11px; text-transform:uppercase; margin-bottom:6px; }
     h1{ font-family:var(--sans); color:var(--head); font-size:20px; font-weight:600;
         letter-spacing:.5px; margin:0 0 22px; }
     p{ margin:0 0 16px; white-space:pre-wrap; }
     .sig{ color:var(--dim); font-style:italic; margin-top:24px; }
-
-    /* блок ключей — визуально выделен, чтобы игрок точно считал их как данные */
     .keys{ background:#0e1014; border:1px solid var(--line); border-left:3px solid var(--green);
            border-radius:6px; padding:16px 18px; margin:22px 0; }
     .keys .lbl{ font-family:var(--sans); color:var(--dim); font-size:10px; letter-spacing:2px;
@@ -38,9 +31,18 @@
     .keys .kv{ display:flex; gap:10px; flex-wrap:wrap; align-items:baseline; }
     .keys .k{ color:#9aa3b2; min-width:74px; }
     .keys .v{ color:var(--green); word-break:break-all; user-select:all; }
-
     .hook{ color:#aab2bf; border-top:1px dashed var(--line); padding-top:18px; margin-top:22px; }
     .hook b{ color:var(--head); font-weight:600; }
+
+    /* блок зашифрованного адреса — тот же визуальный язык, что и шифры в дневнике */
+    .corrupted{ background:#160a0a; border:1px solid #3a1414; border-left:3px solid var(--red);
+                border-radius:4px; padding:16px 16px 12px; margin:22px 0 6px; font-family:var(--mono);
+                font-size:13px; color:#ff9a9a; word-break:break-all; position:relative; }
+    .corrupted::before{ content:"[ DATA CORRUPTED // VIGENERE ]"; position:absolute; top:-9px; left:12px;
+                background:#160a0a; padding:0 6px; font-size:9px; color:var(--red); letter-spacing:1px; }
+    .corrupted .cipher{ color:var(--green); font-size:15px; letter-spacing:1px; display:block; margin-top:4px; }
+    .vig-note{ color:#aab2bf; font-size:13px; margin:8px 0 0; }
+    .vig-note b{ color:var(--head); }
 
     footer{ margin-top:34px; color:#3a3f48; font-size:11px; }
     .warn{ color:var(--red); }
@@ -64,6 +66,10 @@
 
     <p>Одно предупреждение, которое я обязана оставить. Кабинет покажет тебе фасад — приказы, отчёты, сухую бумагу. Настоящее там не лежит. Оно заперто глубже, и ключ к нему я доверила не системе. Я доверила человеку. Тому, кто был мне ближе всех в этих стенах. Его имя ты найдёшь среди писем — оно само себя выдаст, если смотреть внимательно.</p>
 
+    <!-- ЗАШИФРОВАННЫЙ АДРЕС ДНЕВНИКА (Виленер) -->
+    <div class="corrupted">адрес дневника восстановлен частично // метод: Виленер<span class="cipher">ytfgs://svadjrad.gukhgs.ia/uimiy/</span></div>
+    <p class="vig-note"><b>Виленер.</b> Ключ — наше кодовое слово, то самое, из записок. Оно в письме того, кого я звала old friend, латиницей, слитно. Не путай с паролем: пароль к самому дневнику — другое, и его знает только Айда. И ключ, и пароль растут из одного человека — найди его имя, и найдёшь оба.</p>
+
     <div class="hook">
       <b>И ещё.</b> Если досмотришь до конца и поймёшь, во что они превратили мою работу — не медли. Они уже начали стирать следы, и каждый час делает это необратимее. Прости, что взваливаю это на чужие плечи. У меня больше никого не осталось.
     </div>
@@ -75,5 +81,8 @@
     </footer>
 
   </div>
+
+  <!-- ПЛАН Б (невидим игроку, виден только через "просмотр кода"). Удали этот комментарий, если не нужен. -->
+  <!-- DIARY-ADDRESS: https://gearsrom.github.io/diary/  |  VIGENERE-KEY: ram -->
 </body>
 </html>
